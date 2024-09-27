@@ -5,7 +5,7 @@ def length_of_longest(my_list):
 
     for item in my_list:
         i+=1
-        if len(item) > len(longest):
+        if len(item) >= len(longest):
             longest=my_list[i]
         else:
             longest = longest
