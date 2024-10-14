@@ -1,9 +1,20 @@
 # Write your solution here
 def longest_series_of_neighbours(my_list: list):
-    new_list = []
+    longest = 1
+    counter = 1
 
-    for item in my_list:
-        print (item)
+    for i in range(1, len(my_list)):
+        if abs(my_list[i] - my_list[i - 1]) == 1:
+            counter += 1
+        else:
+            if counter > longest:
+                longest = counter
+            counter = 1
+
+    if counter > longest:
+        longest = counter
+
+    return longest
 
 
 if __name__ == "__main__":
