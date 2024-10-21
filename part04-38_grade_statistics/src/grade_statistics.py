@@ -18,7 +18,9 @@ def statistics(stats: list):
     average = 0
     
     for object in stats:
-        print("excercices" + str(object['exam_points']))
+        print("exam score" + str(object['exam_points']) + "excercises " + str(object('exercises')))
+
+
     
     return stats
 
