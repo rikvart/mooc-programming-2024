@@ -17,14 +17,34 @@ def statistics(stats: list):
 
     divide = len(stats)
     grades = []
+    total_for_div = 0
     
     for object in stats:
         current_exam = object['exam_points']
         current_excercises = math.floor(object['exercises'] / 10)
+        current_total = current_exam + current_excercises
+        total_for_div = total_for_div + current_total
+
+        if current_total <= 14:
+            grades.append(0)
+        elif current_total <= 17 and current_total >= 15:
+            grades.append(1)
+        elif current_total <= 20 and current_total >= 18:
+            grades.append(2)
+        elif current_total <= 23 and current_total >= 21:
+            grades.append(3)
+        elif current_total <= 27 and current_total >= 24:
+            grades.append(4)
+        elif current_total <= 30 and current_total >= 30:
+            grades.append(5)
+
+    
+
 
         
         print("exam score: " + str(object['exam_points']) + " excercises: " + str(object['exercises']) + "current" +str(current_excercises))
 
+    print(grades)
 
     
     return stats
