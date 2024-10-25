@@ -15,9 +15,10 @@ def input_from_user():
 
 def statistics(stats: list):
 
-    divide = len(stats)
     grades = []
     total_for_div = 0
+    average = total_for_div / len(stats)
+    
     
     for object in stats:
         current_exam = object['exam_points']
@@ -43,8 +44,9 @@ def statistics(stats: list):
 
         
         print("exam score: " + str(object['exam_points']) + " excercises: " + str(object['exercises']) + "current" +str(current_excercises))
-
-    print(grades)
+    total_for_div = total_for_div + current_total
+    
+    print(grades, total_for_div, average)
 
     
     return stats
