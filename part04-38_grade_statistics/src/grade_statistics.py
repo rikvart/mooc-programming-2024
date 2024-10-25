@@ -1,3 +1,5 @@
+import math
+
 def input_from_user():
     numbers = []
     while True:
@@ -13,12 +15,15 @@ def input_from_user():
 
 def statistics(stats: list):
 
-    amount = len(stats)
-    count = 0
-    average = 0
+    divide = len(stats)
+    grades = []
     
     for object in stats:
-        print("exam score" + str(object['exam_points']) + "excercises " + str(object('exercises')))
+        current_exam = object['exam_points']
+        current_excercises = math.floor(object['exercises'] / 10)
+
+        
+        print("exam score: " + str(object['exam_points']) + " excercises: " + str(object['exercises']) + "current" +str(current_excercises))
 
 
     
@@ -33,5 +38,14 @@ if __name__ == "__main__":
 # The exercises completed are converted into exercise points, so that completing at least 10% of the exercises grants one point
 # 20% grants two points, and so forth. Completing all 100 exercises grants 10 exercise points. 
 # The number of exercise points granted is an integer value, rounded down.
-
+# Statistics:
+#Points average: 14.5
+#Pass percentage: 75.0
+#Grade distribution:
+#  5:
+#  4:
+#  3: *
+#  2:
+#  1: **
+#  0: *
 
