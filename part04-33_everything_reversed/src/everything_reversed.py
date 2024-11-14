@@ -10,3 +10,4 @@ def everything_reversed(names: list):
     return (newList[::-1])
 
 
+oc
